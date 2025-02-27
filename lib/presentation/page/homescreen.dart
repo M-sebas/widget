@@ -6,7 +6,6 @@ class Homescreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const CircleAvatar(),
       appBar: AppBar(
         centerTitle: true,
         title: const Text('Homescreen'),
