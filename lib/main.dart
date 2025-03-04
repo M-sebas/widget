@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pruevas_widget/presentation/page/page_login.dart';
+import 'package:pruevas_widget/presentation/register/page_login.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Sizer',
           theme: ThemeData.light(),
-          home: const PageLogin(),
+          home: PageLogin(),
         ); 
       }
     );
