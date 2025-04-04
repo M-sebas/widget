@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:pruevas_widget/presentation/register/page_login.dart';
+import 'package:pruevas_widget/presentation/router/go_router.dart';
 import 'package:sizer/sizer.dart';
 
-void main() {
+main(){  
   runApp(const MyApp());
+
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+   const MyApp({super.key, });
 
   // This widget is the root of your application.
   @override
@@ -15,14 +16,15 @@ class MyApp extends StatelessWidget {
     /* sizer se utiliza para darle a un diseño unico a todas las pantalla  sea grande o pequeña su tamaño va ser igual.*/
     return Sizer( 
       builder: (context, orientation, deviceType) {
-        return MaterialApp(
+        return MaterialApp.router(
           debugShowCheckedModeBanner: false,
           title: 'Sizer',
           theme: ThemeData.light(),
-          home: const PageLogin(),
+          routerConfig: AppRoute.router,
         ); 
       }
     );
   }
 }
+
 

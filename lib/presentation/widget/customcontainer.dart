@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 
 
@@ -15,17 +16,16 @@ class Customcontainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(50),
-              
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
-    
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        borderRadius:BorderRadius.circular(12),
-        color: Colors.blue ),
-      child: child,
+    return SingleChildScrollView(
+      child: Container(
+                
+        width: 35.h,
+        height: 70.h,
+        decoration: BoxDecoration(
+          borderRadius:BorderRadius.circular(12),
+          color: Colors.blue ),
+        child: child,
+      ),
     );
   }
 }
