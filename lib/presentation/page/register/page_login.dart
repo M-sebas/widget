@@ -11,35 +11,38 @@ class PageLogin extends StatelessWidget {
   // Declaración de un formulario reactivo con dos campos: 'email' y 'password'.
   // Cada campo tiene validadores que aseguran que el valor no esté vacío.
   final form = FormGroup({
-    'email': FormControl<String>(validators: [Validators.required]), // Campo de email obligatorio.
-    'password': FormControl<String>(validators: [Validators.required]), // Campo de contraseña obligatorio.
+    'email': FormControl<String>(
+        validators: [Validators.required]), // Campo de email obligatorio.
+    'password': FormControl<String>(
+        validators: [Validators.required]), // Campo de contraseña obligatorio.
   });
 
   Future<void> verificarCredenciales(BuildContext context) async {
-  final prefs = await SharedPreferences.getInstance();
-  final savedEmail = prefs.getString('email');
-  final savedPassword = prefs.getString('password');
+    final prefs = await SharedPreferences.getInstance();
+    final savedEmail = prefs.getString('email');
+    final savedPassword = prefs.getString('password');
 
-  final email = form.control('email').value;
-  final password = form.control('password').value;
+    final email = form.control('email').value;
+    final password = form.control('password').value;
 
-  if (email == savedEmail && password == savedPassword) {
-    // Si coinciden, muestra un mensaje de advertencia y navega a la pantalla de inicio
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Advertencia: Las credenciales coinciden con las registradas.'),
-      ),
-    );
-    context.go(AppRouter.home);
-  } else {
-    // Si no coinciden, muestra un mensaje de error
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Error: Credenciales incorrectas.'),
-      ),
-    );
+    if (email == savedEmail && password == savedPassword) {
+      // Si coinciden, muestra un mensaje de advertencia y navega a la pantalla de inicio
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text(
+              'Advertencia: Las credenciales coinciden con las registradas.'),
+        ),
+      );
+      context.go(AppRouter.home);
+    } else {
+      // Si no coinciden, muestra un mensaje de error
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Error: Credenciales incorrectas.'),
+        ),
+      );
+    }
   }
-}
 
   // Constructor de la clase PageLogin.
   PageLogin({super.key});
@@ -55,8 +58,10 @@ class PageLogin extends StatelessWidget {
         decoration: const BoxDecoration(
           // Fondo con un degradado de colores.
           gradient: LinearGradient(
-            begin: Alignment.topCenter, // Inicio del degradado en la parte superior.
-            end: Alignment.bottomCenter, // Fin del degradado en la parte inferior.
+            begin: Alignment
+                .topCenter, // Inicio del degradado en la parte superior.
+            end: Alignment
+                .bottomCenter, // Fin del degradado en la parte inferior.
             colors: [
               Color(0xFFFFE7C1), // Color 1.
               Color(0xFFF2EEEB), // Color 2.
@@ -78,28 +83,32 @@ class PageLogin extends StatelessWidget {
                   children: [
                     // Campo de texto reactivo personalizado para el email.
                     ReactiveTextFieldCustom(
-                      formControlName: 'email', // Nombre del campo en el formulario.
+                      formControlName:
+                          'email', // Nombre del campo en el formulario.
                       label: 'Email', // Etiqueta del campo.
-                      keyboardType: TextInputType.emailAddress, // Tipo de teclado para email.
+                      keyboardType: TextInputType
+                          .emailAddress, // Tipo de teclado para email.
                       validationMessage: {
-                        'required': (error) => 'el campo es obligatorio', // Mensaje de error si está vacío.
+                        'required': (error) =>
+                            'el campo es obligatorio', // Mensaje de error si está vacío.
                       },
                     ),
                     // Campo de texto reactivo personalizado para la contraseña.
                     ReactiveTextFieldCustom(
-                      formControlName: 'password', // Nombre del campo en el formulario.
+                      formControlName:
+                          'password', // Nombre del campo en el formulario.
                       label: 'Password', // Etiqueta del campo.
-                      keyboardType: TextInputType.visiblePassword, // Tipo de teclado para contraseñas.
+                      keyboardType: TextInputType
+                          .visiblePassword, // Tipo de teclado para contraseñas.
                       isPassword: true, // Indica que es un campo de contraseña.
                       validationMessage: {
-                        'required': (error) => 'el campo es obligatorio', // Mensaje de error si está vacío.
+                        'required': (error) =>
+                            'el campo es obligatorio', // Mensaje de error si está vacío.
                       },
                     ),
 
-
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
-
                       children: [
                         TextButton(
                           onPressed: () {
@@ -110,17 +119,19 @@ class PageLogin extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 12,),
+                    const SizedBox(
+                      height: 12,
+                    ),
 
                     MaterialButton(
-                      onPressed: () => verificarCredenciales(context), // Llama a la función iniciarSesion con el contexto.
+                      onPressed: () => verificarCredenciales(
+                          context), // Llama a la función iniciarSesion con el contexto.
                       color: const Color(0xFFE8A8F2),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: const Text('Ingresar'),
                     ),
-
                   ],
                 ),
               ),

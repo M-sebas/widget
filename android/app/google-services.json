@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "188985410083",
+    "project_id": "proyecto-mensajeria-cb89d",
+    "storage_bucket": "proyecto-mensajeria-cb89d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:188985410083:android:fcd36fffc072d6bf21e796",
+        "android_client_info": {
+          "package_name": "com.example.pruevas_widget"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIv4Qg_0vj1091NBH03fMXfhIKGLs2UiY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

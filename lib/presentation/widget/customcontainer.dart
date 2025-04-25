@@ -5,7 +5,7 @@ import 'package:sizer/sizer.dart';
 
 
 /*este va ser el estilo de las pantallas de inicio de seccion y registro.
-por eso lo isimos reutilisable 
+por eso lo hisimos reutilisable 
  */
 class Customcontainer extends StatelessWidget {
 
